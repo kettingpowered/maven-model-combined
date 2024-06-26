@@ -1,0 +1,22 @@
+rootProject.name = 'maven-model-combined'
+
+dependencyResolutionManagement {
+    versionCatalogs {
+        libs {
+            library('maven-model', 'org.apache.maven', 'maven-model').version(MAVEN_MODEL_VERSION)
+            library('maven-model-builder', 'org.apache.maven', 'maven-model-builder').version(MAVEN_MODEL_VERSION)
+            library('maven-builder-support', 'org.apache.maven', 'maven-builder-support').version(MAVEN_MODEL_VERSION)
+
+            library('plexus-interpolation', 'org.codehaus.plexus', 'plexus-interpolation').version(PLEXUS_INTERPOLATION_VERSION)
+            library('plexus-utils', 'org.codehaus.plexus', 'plexus-utils').version(PLEXUS_UTILS_VERSION)
+
+            bundle('maven-model-combined', [
+                'maven-model',
+                'maven-model-builder',
+                'maven-builder-support',
+                'plexus-interpolation',
+                'plexus-utils'
+            ])
+        }
+    }
+}
